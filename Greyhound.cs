@@ -9,8 +9,7 @@ using System.Drawing;
 namespace DogRaces
 {
     class Greyhound
-    {
-        
+    {        
         public int StartingPosition;
         public int RaceTrackLength;
         public PictureBox MyPictureBox = null;

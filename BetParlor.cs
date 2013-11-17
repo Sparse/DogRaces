@@ -8,7 +8,7 @@ namespace DogRaces
 {
     class BetParlor
     {
-        public static bool AllBetsPlaced = true;
+        public static bool AllBetsPlaced = false;
         public int AmountBet;
         public Greyhound Dog;
         public string Bettor;

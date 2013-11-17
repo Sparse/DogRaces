@@ -40,6 +40,8 @@ namespace DogRaces
             //NewGreyHound[2].ToStartLine();
             //NewGreyHound[3].ToStartLine();
             Array.ForEach(NewGreyHound, a => a.ToStartLine());
+
+            Array.ForEach(NewGuy, guy => guy.UpdateLabel());
         }
 
         public void button1_Click(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace DogRaces
                             }
                             MessageBox.Show("We have a winner! It's " + NewGreyHound[i].Name);
                             Array.ForEach(NewGreyHound, m => m.ToStartLine());
-                            BetParlor.AllBetsPlaced = false;
+                            BetParlor.AllBetsPlaced = false;                            
                             break;
                         }
                     }

@@ -19,7 +19,7 @@ namespace DogRaces
 
         public void UpdateLabel()
         {
-            
+            MyTextBox.Text = this.Name;
         }
 
     }
