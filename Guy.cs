@@ -15,10 +15,12 @@ namespace DogRaces
         public Label MyLabel;
         public RadioButton MyButton;
         public TextBox MyTextBox;
+        BetParlor BetParlor;
 
 
         public void UpdateLabel()
         {
+
             MyTextBox.Text = this.Name;
         }
 

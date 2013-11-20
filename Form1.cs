@@ -39,9 +39,9 @@ namespace DogRaces
             //NewGreyHound[1].ToStartLine();
             //NewGreyHound[2].ToStartLine();
             //NewGreyHound[3].ToStartLine();
-            Array.ForEach(NewGreyHound, a => a.ToStartLine());
-
             Array.ForEach(NewGuy, guy => guy.UpdateLabel());
+            Array.ForEach(NewGreyHound, a => a.ToStartLine());
+            
         }
 
         public void button1_Click(object sender, EventArgs e)
