@@ -22,14 +22,11 @@ namespace DogRaces
         }
 
         public void PlaceBet(int pAmount, int pDog)
-        {
-            BetParlor = new BetParlor();
+        {            
             if (Money == 0) { MessageBox.Show(this.Name + "Says: I don't have enough money to bet!!", "Trying to bet"); return; } 
             if (Money - pAmount > 0) { Money -= pAmount; }
             else { MessageBox.Show(this.Name + "Says: I don't have enough money to bet that much!", "Not enough money"); return; }
-            BetParlor.Dog = pDog;
-            BetParlor.AmountBet = pAmount;
-            BetParlor.Bettor = this;
+            BetParlor = new BetParlor() { Dog = pDog, AmountBet = pAmount, Bettor = this };
         }
     }
 }

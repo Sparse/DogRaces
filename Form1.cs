@@ -35,7 +35,6 @@ namespace DogRaces
 
             Array.ForEach(NewGuy, guy => guy.UpdateLabel());
             Array.ForEach(NewGreyHound, a => a.ToStartLine());
-            
         }
 
         public void button1_Click(object sender, EventArgs e)
