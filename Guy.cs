@@ -18,7 +18,7 @@ namespace DogRaces
 
         public void UpdateLabel()
         {
-            MyTextBox.Text = this.Name;
+            BetParlor.GetDescription();
         }
 
         public void PlaceBet(int pAmount, int pDog)
@@ -27,6 +27,11 @@ namespace DogRaces
             if (Money - pAmount > 0) { Money -= pAmount; }
             else { MessageBox.Show(this.Name + "Says: I don't have enough money to bet that much!", "Not enough money"); return; }
             BetParlor = new BetParlor() { Dog = pDog, AmountBet = pAmount, Bettor = this };
+        }
+
+        public void Collect(int pWinner)
+        {
+            Money += BetParlor.PayOut(BetParlor.Dog);
         }
     }
 }

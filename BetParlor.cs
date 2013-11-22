@@ -15,12 +15,13 @@ namespace DogRaces
 
         public void GetDescription()
         {
-            string toreturn = Bettor.Name + "has bet " + AmountBet.ToString() + "dog " + Dog;
+            Bettor.MyTextBox.Text = Bettor.Name + "has bet " + AmountBet.ToString() + "dog " + Dog;
         }
 
-        public void PayOut()
+        public int PayOut(int pWinningDog)
         {
-
+            if (pWinningDog == Dog) return AmountBet * 2;
+            else return Bettor.Money - AmountBet;
         }
     }
 }
