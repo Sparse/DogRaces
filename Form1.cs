@@ -26,9 +26,9 @@ namespace DogRaces
             //Guy mBob = new Guy() { Money = 75, Name = "Bob", MyLabel = label2, MyButton = radioButton2};
             //Guy mAl = new Guy() { Money = 45, Name = "Al", MyLabel = label3, MyButton = radioButton3 };
             NewGuy = new Guy[] 
-            { new Guy() { Money = 50, Name = "Joe", MyButton = radioButton1, MyTextBox = textBox1 }, 
-              new Guy() { Money = 75, Name = "Bob", MyButton = radioButton2, MyTextBox = textBox2 }, 
-              new Guy() { Money = 45, Name = "Al", MyButton = radioButton3, MyTextBox = textBox3 } };
+            { new Guy() { Money = 50, Name = "Joe", MyButton = radioButton1, MyTextBox = textBox1, MyDog = numericUpDown2 }, 
+              new Guy() { Money = 75, Name = "Bob", MyButton = radioButton2, MyTextBox = textBox2, MyDog = numericUpDown2}, 
+              new Guy() { Money = 45, Name = "Al", MyButton = radioButton3, MyTextBox = textBox3, MyDog = numericUpDown2} };
 
             NewGreyHound = new Greyhound[]
             { new Greyhound() { MyPictureBox = pictureBox1, LocationX = 0, RaceTrackLength = pictureBox5.Right, Name = "Dog1" },

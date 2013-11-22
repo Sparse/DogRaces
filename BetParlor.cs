@@ -10,12 +10,12 @@ namespace DogRaces
     {
         public static bool AllBetsPlaced = true;
         public int AmountBet;
-        public Greyhound Dog;
+        public int Dog;
         public Guy Bettor;
 
         public void GetDescription()
         {
-            
+            string toReturn = Bettor.Name + "has bet " + AmountBet.ToString() + "dog " + Dog.Name;
         }
 
         public void PayOut()

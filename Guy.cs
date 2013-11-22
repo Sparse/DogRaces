@@ -10,11 +10,12 @@ namespace DogRaces
     class Guy
     {
         public string Name;
-        public int Money;
-        public int MyBet;
+        public int Money;        
         public Label MyLabel;
+        public NumericUpDown MyDog;
         public RadioButton MyButton;
         public TextBox MyTextBox;
+        
         BetParlor BetParlor;
 
 
@@ -22,6 +23,11 @@ namespace DogRaces
         {
 
             MyTextBox.Text = this.Name;
+        }
+
+        public bool PlaceBet()
+        {
+            BetParlor.Dog = (int)MyDog.Value;
         }
 
     }
