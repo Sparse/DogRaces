@@ -15,20 +15,16 @@ namespace DogRaces
         public NumericUpDown MyDog;
         public RadioButton MyButton;
         public TextBox MyTextBox;
-        
         BetParlor BetParlor;
-
 
         public void UpdateLabel()
         {
-
             MyTextBox.Text = this.Name;
         }
 
-        public bool PlaceBet()
+        public void PlaceBet()
         {
             BetParlor.Dog = (int)MyDog.Value;
         }
-
     }
 }
