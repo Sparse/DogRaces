@@ -15,7 +15,7 @@ namespace DogRaces
 
         public void GetDescription()
         {
-            string toreturn = Bettor.Name + "has bet " + AmountBet.ToString() + "dog " + Dog.Name;
+            string toreturn = Bettor.Name + "has bet " + AmountBet.ToString() + "dog " + Dog;
         }
 
         public void PayOut()
