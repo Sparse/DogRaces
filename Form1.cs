@@ -33,7 +33,7 @@ namespace DogRaces
               new Greyhound() { MyPictureBox = pictureBox3, LocationX = 0, RaceTrackLength = pictureBox5.Right, Name = "Dog3" },
               new Greyhound() { MyPictureBox = pictureBox4, LocationX = 0, RaceTrackLength = pictureBox5.Right, Name = "Dog4" } };
 
-            Array.ForEach(NewGuy, guy => guy.UpdateLabel());
+            
             Array.ForEach(NewGreyHound, a => a.ToStartLine());
         }
 
@@ -66,6 +66,7 @@ namespace DogRaces
                 else { MessageBox.Show("All bets need to be placed before the race can begin!!"); break; }
             }
         }
+
         public void RestartRace()
         {
             Array.ForEach(NewGreyHound, a => a.ToStartLine());
@@ -75,7 +76,14 @@ namespace DogRaces
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            int guyBetting = 3;
+
+            if (radioButton1.Checked) { guyBetting = 0; }
+            if (radioButton2.Checked) { guyBetting = 1; }
+            if (radioButton3.Checked) { guyBetting = 2; }
+
+            NewGuy[guyBetting].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value);
+            NewGuy[guyBetting].UpdateLabel();
         }
     }
 }
