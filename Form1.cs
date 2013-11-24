@@ -34,6 +34,7 @@ namespace DogRaces
               new Greyhound() { MyPictureBox = pictureBox4, LocationX = 0, RaceTrackLength = pictureBox5.Right, Name = "Dog4" } };
 
             
+            Array.ForEach(NewGuy, a => a.UpdateLabel());
             Array.ForEach(NewGreyHound, a => a.ToStartLine());
         }
 
@@ -43,7 +44,7 @@ namespace DogRaces
 
             while (Winner == false)
             {
-                if (BetParlor.AllBetsPlaced)
+                if (NewGuy[0].AlreadyBet && NewGuy[1].AlreadyBet && NewGuy[2].AlreadyBet == true)
                 {
                     for (int i = 0; i < NewGreyHound.Length; ++i)
                     {
@@ -58,13 +59,14 @@ namespace DogRaces
 
                             MessageBox.Show("We have a winner! It's " + NewGreyHound[i].Name);
                             Array.ForEach(NewGreyHound, m => m.ToStartLine());
-                            BetParlor.AllBetsPlaced = false;                            
+                            //BetParlor.AllBetsPlaced = false;                            
                             break;
                         }
                     }
                 }
                 else { MessageBox.Show("All bets need to be placed before the race can begin!!"); break; }
             }
+            Array.ForEach(NewGuy, a => a.UpdateLabel());
         }
 
         public void RestartRace()
@@ -76,14 +78,21 @@ namespace DogRaces
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int guyBetting = 3;
-
-            if (radioButton1.Checked) { guyBetting = 0; }
-            if (radioButton2.Checked) { guyBetting = 1; }
-            if (radioButton3.Checked) { guyBetting = 2; }
-
-            NewGuy[guyBetting].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value);
-            NewGuy[guyBetting].UpdateLabel();
+            if (radioButton1.Checked) 
+            { 
+                NewGuy[0].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value);
+                NewGuy[0].UpdateLabel();
+            }
+            if (radioButton2.Checked) 
+            { 
+                NewGuy[1].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value);
+                NewGuy[1].UpdateLabel();
+            }
+            if (radioButton3.Checked) 
+            { 
+                NewGuy[2].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value);
+                NewGuy[2].UpdateLabel();            
+            }
         }
     }
 }

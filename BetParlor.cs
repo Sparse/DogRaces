@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 namespace DogRaces
 {
     class BetParlor
-    {
-        public static bool AllBetsPlaced = true;
+    {       
         public int AmountBet;
         public int Dog;
         public Guy Bettor;
 
         public void GetDescription()
         {
-            Bettor.MyTextBox.Text = Bettor.Name + "has bet " + AmountBet.ToString() + "dog " + Dog;
+            Bettor.MyTextBox.Text = Bettor.Name + " has bet " + AmountBet.ToString() + " on dog " + Dog;
         }
 
         public int PayOut(int pWinningDog)
