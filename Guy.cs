@@ -18,8 +18,6 @@ namespace DogRaces
 
         public bool AlreadyBet = false;
         int AmountBet;
-
-        
        
         public void UpdateLabel()
         {
@@ -43,7 +41,7 @@ namespace DogRaces
                 AlreadyBet = false;
             }
 
-            if (Money == 0) { MessageBox.Show(this.Name + "Says: I don't have enough money to bet!!", "Trying to bet"); return; } 
+            if (Money <= 0) { MessageBox.Show(this.Name + "Says: I don't have enough money to bet!!", "Trying to bet"); return; } 
             if (Money - pAmount > 0) { Money -= pAmount; }
             else { MessageBox.Show(this.Name + "Says: I don't have enough money to bet that much!", "Not enough money"); return; }
             AlreadyBet = true;

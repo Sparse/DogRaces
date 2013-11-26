@@ -52,12 +52,14 @@ namespace DogRaces
                         pictureBox5.Refresh();
                         if (NewGreyHound[i].Run())
                         {
+                            
                             bool allequal = NewGreyHound.Skip(1).Count(g => g.LocationX == NewGreyHound[0].LocationX) == NewGreyHound.Length - 1;
                             Winner = true;
                             RaceOver = true;
                             if (allequal) { MessageBox.Show("Holy shit! A draw!! Everyone wins money!!"); }
 
                             MessageBox.Show("We have a winner! It's " + NewGreyHound[i].Name);
+                            Array.ForEach(NewGuy, a => a.Collect(i));
                             Array.ForEach(NewGreyHound, m => m.ToStartLine());
                             //BetParlor.AllBetsPlaced = false;                            
                             break;
