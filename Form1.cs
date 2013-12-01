@@ -46,13 +46,12 @@ namespace DogRaces
             {
                 if (NewGuy[0].AlreadyBet && NewGuy[1].AlreadyBet && NewGuy[2].AlreadyBet == true)
                 {
-                    for (int i = 0; i < NewGreyHound.Length; ++i)
+                    for (int i = 0; i < NewGreyHound.Length; i++)
                     {
                         NewGreyHound[i].Run();
                         pictureBox5.Refresh();
                         if (NewGreyHound[i].Run())
                         {
-                            
                             bool allequal = NewGreyHound.Skip(1).Count(g => g.LocationX == NewGreyHound[0].LocationX) == NewGreyHound.Length - 1;
                             Winner = true;
                             RaceOver = true;
@@ -82,17 +81,17 @@ namespace DogRaces
         {
             if (radioButton1.Checked) 
             { 
-                NewGuy[0].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value);
+                NewGuy[0].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value - 1);
                 NewGuy[0].UpdateLabel();
             }
             if (radioButton2.Checked) 
             { 
-                NewGuy[1].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value);
+                NewGuy[1].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value - 1);
                 NewGuy[1].UpdateLabel();
             }
             if (radioButton3.Checked) 
             { 
-                NewGuy[2].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value);
+                NewGuy[2].PlaceBet((int)numericUpDown1.Value, (int)numericUpDown2.Value - 1);
                 NewGuy[2].UpdateLabel();            
             }
         }

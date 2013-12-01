@@ -41,9 +41,22 @@ namespace DogRaces
                 AlreadyBet = false;
             }
 
-            if (Money <= 0) { MessageBox.Show(this.Name + "Says: I don't have enough money to bet!!", "Trying to bet"); return; } 
-            if (Money - pAmount > 0) { Money -= pAmount; }
-            else { MessageBox.Show(this.Name + "Says: I don't have enough money to bet that much!", "Not enough money"); return; }
+            if (Money <= 0) 
+            { 
+                MessageBox.Show(this.Name + "Says: I don't have enough money to bet!!", "Trying to bet"); 
+                return; 
+            } 
+
+            if (Money - pAmount > 0) 
+            { 
+                Money -= pAmount; 
+            }
+            else 
+            { 
+                MessageBox.Show(this.Name + "Says: I don't have enough money to bet that much!", "Not enough money"); 
+                return; 
+            }
+
             AlreadyBet = true;
             AmountBet = pAmount;
             BetParlor = new BetParlor() { Dog = pDog, AmountBet = pAmount, Bettor = this };
@@ -51,7 +64,7 @@ namespace DogRaces
 
         public void Collect(int pWinner)
         {
-            Money += BetParlor.PayOut(BetParlor.Dog);
+            Money = BetParlor.PayOut(pWinner);
             MyButton.Text = Name + " has " + Money.ToString() + " dollars";
         }
     }
