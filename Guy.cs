@@ -66,6 +66,10 @@ namespace DogRaces
         {
             Money = BetParlor.PayOut(pWinner);
             MyButton.Text = Name + " has " + Money.ToString() + " dollars";
+            AlreadyBet = false;
+            AmountBet = 0;
+            BetParlor = null;
+            MyTextBox.Text = string.Format("{0} hasn't placed another bet yet!", Name);
         }
     }
 }
